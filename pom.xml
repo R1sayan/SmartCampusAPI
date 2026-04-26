@@ -16,6 +16,7 @@
     </properties>
 
     <dependencies>
+        <!-- Jersey + Grizzly -->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-grizzly2-http</artifactId>
@@ -26,9 +27,16 @@
             <artifactId>jersey-hk2</artifactId>
             <version>2.41</version>
         </dependency>
+        <!-- JSON Support -->
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
+            <version>2.41</version>
+        </dependency>
+        <!-- Jackson Feature -->
+        <dependency>
+            <groupId>org.glassfish.jersey.ext</groupId>
+            <artifactId>jersey-bean-validation</artifactId>
             <version>2.41</version>
         </dependency>
     </dependencies>
@@ -45,6 +53,14 @@
                             <mainClass>com.smartcampus.Main</mainClass>
                         </manifest>
                     </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.smartcampus.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>
